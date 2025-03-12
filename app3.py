@@ -125,7 +125,7 @@ def analyze_meal(meal_info):
 # 하드코딩 체중 데이터 (예시)
 weight_data = [
     {"date": "2025-02-26", "weight": 98},
-    {"date": "2023-02-27", "weight": 97.1},
+    {"date": "2025-02-27", "weight": 97.1},
     {"date": "2025-02-28", "weight": 96.5},
     {"date": "2025-03-01", "weight": 97.2},
     {"date": "2025-03-02", "weight": 96.9},
