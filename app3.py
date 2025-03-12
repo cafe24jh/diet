@@ -68,7 +68,7 @@ Provide your analysis in the following format:
 4. 다음 식사 추천"""
         
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",  # 공식 지원 모델명 사용
+            model="gpt-4o",  # 공식 지원 모델명 사용
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_content}
@@ -124,15 +124,15 @@ def analyze_meal(meal_info):
 
 # 하드코딩 체중 데이터 (예시)
 weight_data = [
-    {"date": "2023-01-01", "weight": 70.0},
-    {"date": "2023-01-02", "weight": 69.5},
-    {"date": "2023-01-03", "weight": 69.2},
-    {"date": "2023-01-04", "weight": 69.0},
+    {"date": "2025-02-26", "weight": 98},
+    {"date": "2023-02-27", "weight": 97,1},
+    {"date": "2025-02-28", "weight": 96.5},
+    {"date": "2025-03-01", "weight": 97.2},
 ]
 
 # 하드코딩 식단 데이터 (예시)
 meal_data = [
-    {"date": "2023-01-01", "breakfast": "계란, 토스트", "lunch": "샐러드", "dinner": "닭가슴살, 밥"},
+    {"date": "2025-03-10", "breakfast": "", "lunch": "두부샐러드 + 두유", "dinner": ""},
     {"date": "2023-01-02", "breakfast": "요거트, 과일", "lunch": "스파게티", "dinner": "생선, 야채"},
     {"date": "2023-01-03", "breakfast": "시리얼, 우유", "lunch": "김밥", "dinner": "된장찌개, 밥"},
     {"date": "2023-01-04", "breakfast": "오트밀", "lunch": "샌드위치", "dinner": "스튜"},
