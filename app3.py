@@ -144,10 +144,12 @@ weight_data = [
 
 # 하드코딩 식단 데이터 (예시)
 meal_data = [
+    {"date": "2025-03-05", "breakfast": "", "lunch": "", "dinner": "피자"},
+    {"date": "2025-03-09", "breakfast": "청경채 + 햄샌드위치", "lunch": "닭가슴살 샐러드", "dinner": ""},
     {"date": "2025-03-10", "breakfast": "", "lunch": "두부샐러드 + 두유", "dinner": ""},
-    {"date": "2023-01-02", "breakfast": "요거트, 과일", "lunch": "스파게티", "dinner": "생선, 야채"},
-    {"date": "2023-01-03", "breakfast": "시리얼, 우유", "lunch": "김밥", "dinner": "된장찌개, 밥"},
-    {"date": "2023-01-04", "breakfast": "오트밀", "lunch": "샌드위치", "dinner": "스튜"},
+    {"date": "2025-03-11", "breakfast": "", "lunch": "귀리,찹쌀,찰보리,로메인프릴아이스,카이피라,라디치오,후리카게,베이컨,에그,옥수수,양파플레이크,양파,적체,에다마메,크리미칠리드레싱, 두유": ""},
+    {"date": "2025-03-12", "breakfast": "청경채", "lunch": "", "dinner": ""},
+   
 ]
 
 # DataFrame으로 변환
