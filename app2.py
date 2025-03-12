@@ -12,16 +12,25 @@ import re
 import os  # 환경 변수 사용을 위해 추가
 
 # -----------------------
-# 1) OPENAI API 설정
+# 1) 페이지 기본 설정(최상단)
 # -----------------------
-try:
-    # 환경 변수에서 OPENAI_API_KEY 불러오기
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-    if not OPENAI_API_KEY:
-        raise ValueError("OPENAI_API_KEY가 설정되지 않았습니다.")
-    openai.api_key = OPENAI_API_KEY
-except Exception as e:
-    st.error(f"GPT API 초기화 오류: {e}")
+st.set_page_config(
+    page_title="체중 및 식단 관리",
+    page_icon="📊",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+st.title("체중 및 식단 관리 앱")
+
+# -----------------------
+# 2) OPENAI API 설정
+# -----------------------
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+if not OPENAI_API_KEY:
+    st.error("OPENAI_API_KEY가 설정되지 않았습니다.")
+    st.stop()  # 앱 실행 중단
+openai.api_key = OPENAI_API_KEY
 
 def analyze_meal_with_gpt(meal_info):
     """OpenAI ChatCompletion을 이용해 식단을 분석하는 함수"""
@@ -113,18 +122,6 @@ def analyze_meal(meal_info):
     with st.spinner("AI가 식단을 분석중입니다..."):
         analysis_result = analyze_meal_with_gpt(meal_info)
         display_analysis_result(analysis_result)
-
-# -----------------------
-# 2) 페이지 기본 설정
-# -----------------------
-st.set_page_config(
-    page_title="체중 및 식단 관리",
-    page_icon="📊",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
-st.title("체중 및 식단 관리 앱")
 
 # -----------------------
 # 3) MySQL 연결
